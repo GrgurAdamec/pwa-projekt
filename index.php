@@ -9,7 +9,7 @@
     <header>
         <h1 class="naslov">L'Grgur Vijesti</h1>
         <nav class="navigacija">
-            <a href="index.html" class="linkNav">Home</a>
+            <a href="" class="linkNav">Home</a>
             <a href="#politika" class="linkNav">Politika</a>
             <a href="#sport" class="linkNav">Sport</a>
             <a href="" class="linkNav">Login</a>
