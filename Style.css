@@ -1,0 +1,77 @@
+body{
+    background-color: white;
+}
+
+header{
+    margin: 0px;
+}
+
+h1{
+    font-family: sans-serif;
+}
+
+.naslov{
+    color: blue;
+    text-align: center;
+}
+
+.navigacija{
+    background-color: grey;
+    padding: 10px;
+    padding-left: 30%;
+}
+
+.linkNav{
+    margin: auto;
+    font-size: larger;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.main {
+    margin-top: 40px;
+    background-color: #E8E8E8;
+    padding: 40px;
+}
+
+.vijesti-politika, .vijesti-sport{
+    margin: auto;
+    width: 90%;
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.vijesti-sport{
+    margin-top: 40px;
+}
+
+.vijesti{
+    background-color: white;
+    margin: auto;
+    width: 20%;
+    float: left;
+    word-wrap: break-word;
+    box-shadow: 10px 10px 8px #888888;
+}
+
+.linkProcitajVise{
+    color: black;
+    font-size: medium;
+    text-decoration: none;
+}
+
+.slikeClanak{
+    width: 90%;
+}
+
+.footer{
+    width: 100%;
+    text-align: center;
+}
