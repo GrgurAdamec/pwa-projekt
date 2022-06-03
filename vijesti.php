@@ -9,12 +9,7 @@
 <body>
     <header>
         <h1 class="naslov">L'Grgur Vijesti</h1>
-        <!-- <nav class="navbar navbar-dark bg-dark">
-            <a href="" class="linkNav">Home</a>
-            <a href="#politika" class="linkNav">Politika</a>
-            <a href="#sport" class="linkNav">Sport</a>
-            <a href="" class="linkNav">Login</a>
-        </nav> -->
+        
         <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <ul class="nav navbar-nav">
