@@ -11,14 +11,22 @@ h1{
 }
 
 .naslov{
-    color: blue;
+    color: black;
     text-align: center;
 }
 
-.navigacija{
+.naslov-politika, .naslov-sport{
+    margin: auto;
+    text-align: center;
+}
+
+.naslov-sport{
+    position:relative;  
+    top: 40px;
+}
+
+/*.navigacija{
     background-color: grey;
-    padding: 10px;
-    padding-left: 30%;
 }
 
 .linkNav{
@@ -27,7 +35,7 @@ h1{
     color: white;
     text-decoration: none;
     padding: 10px;
-}
+} */
 
 a:hover{
     text-decoration: underline;

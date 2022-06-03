@@ -41,7 +41,7 @@
                     <img src='Slike/smrle.jpg' class='slikeClanak'>
                     <h2>Netko je papak</h2>
                     <p>Bla bla kupio sam novi ususivacč al ne radi a ne znam zašto jer piše da bi trebao raditi</p>
-                    <a href='' class='linkProcitajVise'>Pročitaj više</a>
+                    <a href='vijesti.php' class='linkProcitajVise'>Pročitaj više</a>
                     </div>";
                 }
             ?>
@@ -54,7 +54,7 @@
                     <img src='Slike/smrle.jpg' class='slikeClanak'>
                     <h2>Netko je papak</h2>
                     <p>Bla bla kupio sam novi ususivacč al ne radi a ne znam zašto jer piše da bi trebao raditi</p>
-                    <a href='' class='linkProcitajVise'>Pročitaj više</a>
+                    <a href='vijesti.php' class='linkProcitajVise'>Pročitaj više</a>
                     </div>";
                 }
             ?>
@@ -67,48 +67,3 @@
     </footer>
 </body>
 </html> 
-
-
-
-
-
-
-
-
-
-<!-- // $dbc = mysqli_connect('localhost', 'root', '', 'vjezba_3') or
-        // die('Error connecting to MySQL server.' . mysqli_connect_error());
-
-        // $query = "SELECT * FROM korisnik";
-
-        // $result = mysqli_query($dbc, $query) or die('Error querying database.');
-        //     while($row = mysqli_fetch_array($result))
-        //     {
-        //         if($row['godine'] < 33){
-        //             echo "<tr style='background-color:blue;'>";
-        //             echo "<td>" . $row['id'] . "</td>";
-        //             echo "<td>" . $row['ime'] . "</td>";
-        //             echo "<td>" . $row['prezime'] . "</td>";
-        //             echo "<td>" . $row['spol'] . "</td>";
-        //             echo "<td>" . $row['telefon'] . "</td>";
-        //             echo "<td>" . $row['email'] . "</td>";
-        //             echo "<td>" . $row['godine'] . "</td>";
-        //             echo "<td>" . $row['hobi'] . "</td>";
-        //             echo "</tr>";
-        //         } else{
-        //             echo "<tr style='background-color:red;'>";
-        //             echo "<td>" . $row['id'] . "</td>";
-        //             echo "<td>" . $row['ime'] . "</td>";
-        //             echo "<td>" . $row['prezime'] . "</td>";
-        //             echo "<td>" . $row['spol'] . "</td>";
-        //             echo "<td>" . $row['telefon'] . "</td>";
-        //             echo "<td>" . $row['email'] . "</td>";
-        //             echo "<td>" . $row['godine'] . "</td>";
-        //             echo "<td>" . $row['hobi'] . "</td>";
-        //             echo "</tr>";
-        //         }
-        //     }
-        //     echo "</table>";
-        
-
-        // mysqli_close($dbc);  -->
