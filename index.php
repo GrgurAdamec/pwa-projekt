@@ -14,8 +14,7 @@
         <div class="container-fluid">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#politika">Politika</a></li>
-            <li><a href="#sport">Sport</a></li>
+            <li><a href="unos.html">Kreiraj članak</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

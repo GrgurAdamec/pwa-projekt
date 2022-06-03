@@ -9,11 +9,12 @@
 <body>
     <header>
         <h1 class="naslov">L'Grgur Vijesti</h1>
-        
+
         <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.php">Home</a></li>
+            <li><a href="unos.html">Kreiraj članak</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
