@@ -15,7 +15,7 @@ h1{
     text-align: center;
 }
 
-.naslov-politika, .naslov-sport{
+.naslov-politika, .naslov-sport, .naslov-clanka{
     margin: auto;
     text-align: center;
 }
@@ -79,6 +79,7 @@ a:hover{
 
 .slikeClanak{
     width: 90%;
+    margin: auto;
 }
 
 .footer{
@@ -87,23 +88,8 @@ a:hover{
     bottom: 0px;
 }
 
-/* @media only screen and (max-width: 1000px) {
-    .vijesti{
-        background-color: white;
-        margin: auto;
-        width: 40%;
-        padding: 1%;
-        word-wrap: break-word;
-        box-shadow: 10px 10px 8px #888888;
-        display: flex;
-    }
-
-    .vijesti-politika, .vijesti-sport{
-        margin: auto;
-        width: 90%;
-        background-color: white;
-        padding: 40px;
-        display: flex;
-        justify-content: space-between; 
-    }
-} */
+.slika{
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 20px;
+}

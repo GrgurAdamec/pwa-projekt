@@ -18,10 +18,7 @@
         <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="">Home</a></li>
-            <li><a href="#politika">Politika</a></li>
-            <li><a href="#sport">Sport</a></li>
+            <li class="active"><a href="index.php">Home</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -33,32 +30,14 @@
 
     <content>
     <div class="main">
-        <h1 class="naslov-politika">Politika</h1> <br />
-        <div class="vijesti-politika" id='politika'>
-            <?php
-                for($i = 0; $i < 4; $i++){
-                    echo "<div class='vijesti col-lg-3 col-md-6 col-xs-12'>
-                    <img src='Slike/smrle.jpg' class='slikeClanak'>
-                    <h2>Netko je papak</h2>
-                    <p>Bla bla kupio sam novi ususivacč al ne radi a ne znam zašto jer piše da bi trebao raditi</p>
-                    <a href='vijesti.php' class='linkProcitajVise'>Pročitaj više</a>
-                    </div>";
-                }
-            ?>
-        </div>
-        <h1 class="naslov-sport">Sport</h1> <br />
-        <div class="vijesti-sport" id='sport'>
-            <?php
-                for($i = 0; $i < 4; $i++){
-                    echo "<div class='vijesti col-lg-3 col-md-6 col-xs-12'>
-                    <img src='Slike/smrle.jpg' class='slikeClanak'>
-                    <h2>Netko je papak</h2>
-                    <p>Bla bla kupio sam novi ususivacč al ne radi a ne znam zašto jer piše da bi trebao raditi</p>
-                    <a href='vijesti.php' class='linkProcitajVise'>Pročitaj više</a>
-                    </div>";
-                }
-            ?>
-        </div>
+        <h1 class="naslov-clanka"> Netko je papak </h1>
+        <br />
+        <img src='Slike/smrle.jpg' class='slikeClanak slika'>
+        <br/>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet libero ac tortor auctor, et volutpat mauris sodales. Nulla porttitor ultricies nunc, euismod luctus dolor dictum eget. Pellentesque tellus mi, euismod vitae dapibus ut, commodo eget elit. Aliquam interdum cursus neque, quis bibendum purus rutrum et. Vivamus consequat urna quis lorem convallis dignissim. Aliquam ut viverra libero, et pulvinar arcu. Proin iaculis felis a accumsan mattis. Mauris consequat sit amet nibh quis pulvinar. Duis non consectetur nisl. Nulla ornare tortor eu feugiat aliquam. Sed convallis, nulla non egestas varius, lorem arcu accumsan turpis, ut pulvinar libero tellus quis urna. Ut placerat, tellus porttitor accumsan gravida, massa arcu porttitor nulla, a suscipit nisi justo ac orci.
+            Maecenas facilisis diam a dapibus condimentum. Pellentesque ac maximus massa, ut efficitur sem. Aenean sed tellus a leo imperdiet lacinia tincidunt et lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Curabitur id quam dapibus, pellentesque ex quis, ullamcorper nulla. Cras laoreet, nibh in rutrum tempor, odio metus rutrum nulla, vel lacinia turpis quam a est. Fusce aliquet ipsum sollicitudin nulla maximus molestie. Integer eget neque pretium, malesuada ligula vitae, eleifend sem. Curabitur facilisis, dui sodales sodales faucibus, tellus nunc accumsan erat, sed semper neque sapien id nulla.
+        </p>
     </div>
     </content>
 

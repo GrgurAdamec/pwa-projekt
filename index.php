@@ -19,7 +19,6 @@
         <div class="container-fluid">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="">Home</a></li>
             <li><a href="#politika">Politika</a></li>
             <li><a href="#sport">Sport</a></li>
           </ul>
@@ -41,7 +40,7 @@
                     <img src='Slike/smrle.jpg' class='slikeClanak'>
                     <h2>Netko je papak</h2>
                     <p>Bla bla kupio sam novi ususivacč al ne radi a ne znam zašto jer piše da bi trebao raditi</p>
-                    <a href='' class='linkProcitajVise'>Pročitaj više</a>
+                    <a href='vijesti.php' class='linkProcitajVise'>Pročitaj više</a>
                     </div>";
                 }
             ?>
@@ -54,7 +53,7 @@
                     <img src='Slike/smrle.jpg' class='slikeClanak'>
                     <h2>Netko je papak</h2>
                     <p>Bla bla kupio sam novi ususivacč al ne radi a ne znam zašto jer piše da bi trebao raditi</p>
-                    <a href='' class='linkProcitajVise'>Pročitaj više</a>
+                    <a href='vijesti.php' class='linkProcitajVise'>Pročitaj više</a>
                     </div>";
                 }
             ?>
