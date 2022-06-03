@@ -4,6 +4,7 @@
 <title>Page Title</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
     <header>
@@ -19,7 +20,7 @@
         <div class="vijesti-politika" id='politika'>
             <?php
                 for($i = 0; $i < 4; $i++){
-                    echo "<div class='vijesti'>
+                    echo "<div class='vijesti col-lg-3 col-md-6 col-xs-12'>
                     <img src='Slike/smrle.jpg' class='slikeClanak'>
                     <h2>Netko je papak</h2>
                     <p>Bla bla kupio sam novi ususivacč al ne radi a ne znam zašto jer piše da bi trebao raditi</p>
@@ -31,7 +32,7 @@
         <div class="vijesti-sport" id='sport'>
             <?php
                 for($i = 0; $i < 4; $i++){
-                    echo "<div class='vijesti'>
+                    echo "<div class='vijesti col-lg-3 col-md-6 col-xs-12'>
                     <img src='Slike/smrle.jpg' class='slikeClanak'>
                     <h2>Netko je papak</h2>
                     <p>Bla bla kupio sam novi ususivacč al ne radi a ne znam zašto jer piše da bi trebao raditi</p>
