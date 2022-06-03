@@ -26,32 +26,32 @@
 
     <content>
     <div class="main">
-        <form>
+        <form method="post" action="previewClanak.php">
             <div class="form-row">
               <div class="form-group col-md-12">
-                <label for="naslob">Naslov članka</label>
-                <input type="text" class="form-control" id="naslov" placeholder="Naslov..." required>
+                <label for="naslov">Naslov članka</label>
+                <input type="text" class="form-control" id="naslov" placeholder="Naslov..." name="naslov" required>
               </div>
               <div class="form-group col-md-12">
                 <label for="kratkiSadrzaj">Kratki sadržaj</label>
-                <textarea type="text" class="form-control" id="kratkiSadrzaj" placeholder="Kratki sadrzaj..." required></textarea>
+                <textarea type="text" name="kratkiSadrzaj" class="form-control" id="kratkiSadrzaj" placeholder="Kratki sadrzaj..." required></textarea>
               </div>
             </div>
             <div class="form-group col-md-12">
               <label for="clanak">Tekst članka</label>
-              <textarea type="text" class="form-control" id="clanak" placeholder="Tekst članka..." required></textarea>
+              <textarea type="text" name="clanak" class="form-control" id="clanak" placeholder="Tekst članka..." required></textarea>
             </div>
             <div class="form-group col-md-12">
                 <label for="kategorija">Kategorija</label>
-                <select id="kategorija" class="form-control" required>
+                <select id="kategorija" name="kategorija" class="form-control" required>
                     <option value="none" selected disabled hidden>Odaberite kategoriju</option>
-                    <option value="sport">Sport</option>
-                    <option value="politika">Politika</option>
+                    <option value="SPORT">Sport</option>
+                    <option value="POLITIKA">Politika</option>
                 </select>
             </div>
             <div class="form-group col-md-12">
               <label for="slika">Slika</label>
-              <input type="file" class="form-control" id="slika" required>
+              <input type="file" class="form-control" id="slika">
             </div>
             <div class="form-group col-md-12">
               <div class="form-check">
