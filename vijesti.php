@@ -30,12 +30,18 @@
 
     <content>
     <div class="main">
-        <h1 class="naslov-clanka"> Netko je papak </h1>
+        <h4> Svijet </h4>
+        <br />
+        <h1 class="naslov-clanka"> Netko je papak i ne ide na faks nego je odlučio bit šumski tehničar </h1>
+        <br />
+        <h6> datum </h6>
         <br />
         <img src='Slike/smrle.jpg' class='slikeClanak slika'>
         <br/>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet libero ac tortor auctor, et volutpat mauris sodales. Nulla porttitor ultricies nunc, euismod luctus dolor dictum eget. Pellentesque tellus mi, euismod vitae dapibus ut, commodo eget elit. Aliquam interdum cursus neque, quis bibendum purus rutrum et. Vivamus consequat urna quis lorem convallis dignissim. Aliquam ut viverra libero, et pulvinar arcu. Proin iaculis felis a accumsan mattis. Mauris consequat sit amet nibh quis pulvinar. Duis non consectetur nisl. Nulla ornare tortor eu feugiat aliquam. Sed convallis, nulla non egestas varius, lorem arcu accumsan turpis, ut pulvinar libero tellus quis urna. Ut placerat, tellus porttitor accumsan gravida, massa arcu porttitor nulla, a suscipit nisi justo ac orci.
+        </p>
+        <p>
             Maecenas facilisis diam a dapibus condimentum. Pellentesque ac maximus massa, ut efficitur sem. Aenean sed tellus a leo imperdiet lacinia tincidunt et lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Curabitur id quam dapibus, pellentesque ex quis, ullamcorper nulla. Cras laoreet, nibh in rutrum tempor, odio metus rutrum nulla, vel lacinia turpis quam a est. Fusce aliquet ipsum sollicitudin nulla maximus molestie. Integer eget neque pretium, malesuada ligula vitae, eleifend sem. Curabitur facilisis, dui sodales sodales faucibus, tellus nunc accumsan erat, sed semper neque sapien id nulla.
         </p>
     </div>
