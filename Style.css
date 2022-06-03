@@ -25,18 +25,6 @@ h1{
     top: 40px;
 }
 
-/*.navigacija{
-    background-color: grey;
-}
-
-.linkNav{
-    margin: auto;
-    font-size: larger;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-} */
-
 a:hover{
     text-decoration: underline;
 }

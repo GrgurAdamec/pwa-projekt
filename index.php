@@ -9,12 +9,7 @@
 <body>
     <header>
         <h1 class="naslov">L'Grgur Vijesti</h1>
-        <!-- <nav class="navbar navbar-dark bg-dark">
-            <a href="" class="linkNav">Home</a>
-            <a href="#politika" class="linkNav">Politika</a>
-            <a href="#sport" class="linkNav">Sport</a>
-            <a href="" class="linkNav">Login</a>
-        </nav> -->
+
         <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <ul class="nav navbar-nav">
@@ -66,48 +61,3 @@
     </footer>
 </body>
 </html> 
-
-
-
-
-
-
-
-
-
-<!-- // $dbc = mysqli_connect('localhost', 'root', '', 'vjezba_3') or
-        // die('Error connecting to MySQL server.' . mysqli_connect_error());
-
-        // $query = "SELECT * FROM korisnik";
-
-        // $result = mysqli_query($dbc, $query) or die('Error querying database.');
-        //     while($row = mysqli_fetch_array($result))
-        //     {
-        //         if($row['godine'] < 33){
-        //             echo "<tr style='background-color:blue;'>";
-        //             echo "<td>" . $row['id'] . "</td>";
-        //             echo "<td>" . $row['ime'] . "</td>";
-        //             echo "<td>" . $row['prezime'] . "</td>";
-        //             echo "<td>" . $row['spol'] . "</td>";
-        //             echo "<td>" . $row['telefon'] . "</td>";
-        //             echo "<td>" . $row['email'] . "</td>";
-        //             echo "<td>" . $row['godine'] . "</td>";
-        //             echo "<td>" . $row['hobi'] . "</td>";
-        //             echo "</tr>";
-        //         } else{
-        //             echo "<tr style='background-color:red;'>";
-        //             echo "<td>" . $row['id'] . "</td>";
-        //             echo "<td>" . $row['ime'] . "</td>";
-        //             echo "<td>" . $row['prezime'] . "</td>";
-        //             echo "<td>" . $row['spol'] . "</td>";
-        //             echo "<td>" . $row['telefon'] . "</td>";
-        //             echo "<td>" . $row['email'] . "</td>";
-        //             echo "<td>" . $row['godine'] . "</td>";
-        //             echo "<td>" . $row['hobi'] . "</td>";
-        //             echo "</tr>";
-        //         }
-        //     }
-        //     echo "</table>";
-        
-
-        // mysqli_close($dbc);  -->
