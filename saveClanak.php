@@ -34,16 +34,18 @@
     $datum = $_POST['datum'];
     $vidljivost = $_POST['vidljivost'];
     
-    $dbc = mysqli_connect('localhost', 'root', '', 'projekt') or
-                die('Error connecting to MySQL server.' . mysqli_connect_error());
+    if(isset($_POST['submit'])){
+        $dbc = mysqli_connect('localhost', 'root', '', 'projekt') or
+                    die('Error connecting to MySQL server.' . mysqli_connect_error());
 
-    $sql="INSERT INTO vijest (naslov, kategorija, kratki_sadrzaj, sadrzaj, slika, slika_full_path, datum, vidljivost) values (?, ?, ?, ?, ?, ?, ?, ?)";
-    $stmt = mysqli_stmt_init($dbc);
-                
-    if (mysqli_stmt_prepare($stmt, $sql)){
-        mysqli_stmt_bind_param($stmt,'sssssssi', $naslov, $kategorija, $kratkiSadrzaj, $sadrzaj, $slika, $slika_full_path, $datum, $vidljivost);
-        mysqli_stmt_execute($stmt);
-    } 
+        $sql="INSERT INTO vijest (naslov, kategorija, kratki_sadrzaj, sadrzaj, slika, slika_full_path, datum, vidljivost) values (?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = mysqli_stmt_init($dbc);
+                    
+        if (mysqli_stmt_prepare($stmt, $sql)){
+            mysqli_stmt_bind_param($stmt,'sssssssi', $naslov, $kategorija, $kratkiSadrzaj, $sadrzaj, $slika, $slika_full_path, $datum, $vidljivost);
+            mysqli_stmt_execute($stmt);
+        } 
+    }
 
     mysqli_close($dbc);
 

@@ -87,7 +87,7 @@
           <input type='hidden' name='slika_full_path' value='$uploadPath' />
           <input type='hidden' name='slika' value='Slike/". basename($fileName) ."' />
           <button type='button' onclick='history.back()' class='btn btn-primary col' style='margin-left: 5%; margin-bottom: 10px;'> Povratak </button>
-          <button type='submit' class='btn btn-primary col' style=' margin-bottom: 10px;'> Spremi </button>
+          <button type='submit' name='submit' class='btn btn-primary col' style=' margin-bottom: 10px;'> Spremi </button>
         </form>
         <article class='article'>
             <h4 style='color:red;'> $kategorija </h4>
