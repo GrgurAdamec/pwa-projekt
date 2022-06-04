@@ -29,6 +29,13 @@
     $kratkiSadrzaj = $_POST['kratkiSadrzaj'];
     $clanak = $_POST['clanak'];
     $kategorija = $_POST['kategorija'];
+    $datum = date("d.m.Y");
+
+    if(isset($_POST['provjera'])){
+      $vidljivost = 1;
+    }else{
+      $vidljivost = 0;
+    }
     
     
     $currentDirectory = getcwd();
@@ -74,7 +81,10 @@
           <input type='hidden' name='kategorija' value='$kategorija' />
           <input type='hidden' name='naslov' value='$naslov' />
           <input type='hidden' name='kratkiSadrzaj' value='$kratkiSadrzaj' />
+          <input type='hidden' name='datum' value='$datum' />
           <input type='hidden' name='clanak' value='$clanak' />
+          <input type='hidden' name='vidljivost' value='$vidljivost' />
+          <input type='hidden' name='slika_full_path' value='$uploadPath' />
           <input type='hidden' name='slika' value='Slike/". basename($fileName) ."' />
           <button type='button' onclick='history.back()' class='btn btn-primary col' style='margin-left: 5%; margin-bottom: 10px;'> Povratak </button>
           <button type='submit' class='btn btn-primary col' style=' margin-bottom: 10px;'> Spremi </button>
@@ -84,7 +94,7 @@
             <br />
             <h1 class='naslov-clanka'> $naslov </h1>
             <br />
-            <h6 style='color:grey;'> 3.6.2022. </h6>
+            <h6 style='color:grey;'> $datum </h6>
             <br />
             <img src='Slike/". basename($fileName) ."' class='slikeClanak slika'>
             <br/>
