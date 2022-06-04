@@ -15,7 +15,7 @@ h1{
     text-align: center;
 }
 
-.naslov-politika, .naslov-sport, .naslov-clanka{
+.naslov-politika, .naslov-sport{
     margin: auto;
     text-align: center;
 }
@@ -90,3 +90,8 @@ article{
     padding-left: 5%;
     padding-right: 5%;
 }
+
+.bold-text{
+    font-weight: bold;
+}
+

@@ -68,9 +68,17 @@
     //   }
     }
 
-
     echo "<content>
     <div class='main'>
+        <form method='post' action='saveClanak.php'>
+          <input type='hidden' name='kategorija' value='$kategorija' />
+          <input type='hidden' name='naslov' value='$naslov' />
+          <input type='hidden' name='kratkiSadrzaj' value='$kratkiSadrzaj' />
+          <input type='hidden' name='clanak' value='$clanak' />
+          <input type='hidden' name='slika' value='Slike/". basename($fileName) ."' />
+          <button type='button' onclick='history.back()' class='btn btn-primary col' style='margin-left: 5%; margin-bottom: 10px;'> Povratak </button>
+          <button type='submit' class='btn btn-primary col' style=' margin-bottom: 10px;'> Spremi </button>
+        </form>
         <article class='article'>
             <h4 style='color:red;'> $kategorija </h4>
             <br />
@@ -80,6 +88,8 @@
             <br />
             <img src='Slike/". basename($fileName) ."' class='slikeClanak slika'>
             <br/>
+            <h4 class='bold-text'> $kratkiSadrzaj </h4>
+            <br />
             <p>
                 $clanak
             </p>

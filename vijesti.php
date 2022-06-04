@@ -35,6 +35,8 @@
             <br />
             <img src='Slike/smrle.jpg' class='slikeClanak slika'>
             <br/>
+            <h4 class='bold-text'>Ovdje je neki kratki sadržaj o članku</h4>
+            <br />
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet libero ac tortor auctor, et volutpat mauris sodales. Nulla porttitor ultricies nunc, euismod luctus dolor dictum eget. Pellentesque tellus mi, euismod vitae dapibus ut, commodo eget elit. Aliquam interdum cursus neque, quis bibendum purus rutrum et. Vivamus consequat urna quis lorem convallis dignissim. Aliquam ut viverra libero, et pulvinar arcu. Proin iaculis felis a accumsan mattis. Mauris consequat sit amet nibh quis pulvinar. Duis non consectetur nisl. Nulla ornare tortor eu feugiat aliquam. Sed convallis, nulla non egestas varius, lorem arcu accumsan turpis, ut pulvinar libero tellus quis urna. Ut placerat, tellus porttitor accumsan gravida, massa arcu porttitor nulla, a suscipit nisi justo ac orci.
             </p>
