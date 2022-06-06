@@ -31,15 +31,18 @@
               <div class="form-group col-md-12">
                 <label for="naslov">Naslov članka</label>
                 <input type="text" class="form-control" id="naslov" placeholder="Naslov..." name="naslov" required>
+                <span id="porukaNaslov" class="error"></span> </br>
               </div>
               <div class="form-group col-md-12">
                 <label for="kratkiSadrzaj">Kratki sadržaj</label>
                 <textarea name="kratkiSadrzaj" rows="3" class="form-control" id="kratkiSadrzaj" placeholder="Kratki sadrzaj..." required></textarea>
+                <span id="porukaKratkiSadrzaj" class="error"></span> </br>
               </div>
             </div>
             <div class="form-group col-md-12">
               <label for="clanak">Tekst članka</label>
               <textarea name="clanak" rows="20" class="form-control" id="clanak" placeholder="Tekst članka..." required></textarea>
+              <span id="porukaClanak" class="error"></span> </br>
             </div>
             <div class="form-group col-md-12">
                 <label for="kategorija">Kategorija</label>
@@ -48,10 +51,12 @@
                     <option value="SPORT">Sport</option>
                     <option value="POLITIKA">Politika</option>
                 </select>
+                <span id="porukaKategorija" class="error"></span> </br>
             </div>
             <div class="form-group col-md-12">
               <label for="slika">Slika</label>
               <input type="file" name="slika" class="form-control" id="slika" accept="image/*" required>
+              <span id="porukaSlika" class="error"></span> </br>
             </div>
             <div class="form-group col-md-12">
               <div class="form-check">
@@ -61,10 +66,67 @@
                 </label>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary col">Pošalji</button>
+            <button type="submit" class="btn btn-primary col" id="gumb">Pošalji</button>
         </form>
     </div>
     </content>
+
+    <script type = "text/javascript">
+      document.getElementById("gumb").onclick = function(event) {
+          var slanje_forme = true;
+      
+          var poljeNaslov = document.getElementById("naslov");
+          var naslov = document.getElementById("naslov").value;
+          if (naslov.length < 4 || naslov.length > 30) {
+              slanje_forme = false;
+              poljeNaslov.style.border = "1px solid red";
+              document.getElementById("porukaNaslov").innerHTML = "Naslov mora imat između 5 i 30 znakova!<br>";
+              document.getElementById("porukaNaslov").style.color = "red";
+          }
+  
+          var poljeKratkiSadrzaj = document.getElementById("kratkiSadrzaj");
+          var kratkiSadrzaj = document.getElementById("kratkiSadrzaj").value;
+          if (kratkiSadrzaj.length < 9 || kratkiSadrzaj.length > 100) {
+              slanje_forme = false;
+              poljeKratkiSadrzaj.style.border = "1px solid red";
+              document.getElementById("porukaKratkiSadrzaj").innerHTML = "Kratki sadržaj mora imati između 10 i 100 znakova! <br>";
+              document.getElementById("porukaKratkiSadrzaj").style.color = "red";
+          }
+
+          var poljeClanak = document.getElementById("clanak");
+          var clanak = document.getElementById("clanak").value;    
+          if (clanak.length == 0) {
+              slanje_forme = false;
+              poljeClanak.style.border = "1px solid red";
+              document.getElementById("porukaClanak").innerHTML = "Sadržaj članka ne smije biti prazan!";
+              document.getElementById("porukaClanak").style.color = "red";
+          }
+      
+          var poljeSlika = document.getElementById("slika");
+          var slika = document.getElementById("slika").value;    
+          if (slika.length == 0) {
+              slanje_forme = false;
+              poljeSlika.style.border = "1px solid red";
+              document.getElementById("porukaSlika").innerHTML = "Slika mora biti odabrana!";
+              document.getElementById("porukaSlika").style.color = "red";
+          }
+
+          var poljeKategorija = document.getElementById("kategorija");
+          var kategorija = document.getElementById("kategorija").value;    
+          if (poljeKategorija.selectedIndex == 0) {
+              slanje_forme = false;
+              poljeKategorija.style.border = "1px solid red";
+              document.getElementById("porukaKategorija").innerHTML = "Kategorija mora biti odabrana!";
+              document.getElementById("porukaKategorija").style.color = "red";
+          }
+      
+          if (slanje_forme != true) {
+              event.preventDefault();
+              return false;
+          }
+      
+      }
+    </script>
 
     <footer>
         <p class="footer">Grgur Adamec | gadamec@tvz.hr | 2022.</p>
