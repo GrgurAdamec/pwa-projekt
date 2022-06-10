@@ -14,7 +14,7 @@
         <div class="container-fluid">
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.php">Home</a></li>
-            <li><a href="unos.html">Kreiraj članak</a></li>
+            <li><a href="unos.php">Kreiraj članak</a></li>
             <li><a href="kategorije.php?kategorija=POLITIKA">Politika</a></li>
             <li><a href="kategorije.php?kategorija=SPORT">Sport</a></li>
           </ul>
@@ -29,12 +29,11 @@
     <content>
     <div class="main">
         <?php
-        $kategorija = $_GET['kategorija'];
         echo "<h1 class='naslov-politika'>Vijesti</h1> <br />";
         echo "<div class='vijesti-politika' id='politika'>";
                 include 'connect.php';
 
-                $query = "SELECT * FROM vijest WHERE kategorija = '$kategorija'";
+                $query = "SELECT * FROM vijest";
 
                 $result = mysqli_query($dbc, $query) or die('Error querying database.');
 
@@ -45,6 +44,7 @@
                         <h2>".$row['naslov']."</h2>
                         <p>". $row['kratki_sadrzaj']."s</p>
                         <a href='vijesti.php?id=".$row['id']."' class='linkProcitajVise'>Pročitaj više</a>
+                        <a href='unos.php?id=".$row['id']."' class='linkProcitajVise'>Uredi vijest</a>
                         </div>";
                     }
                 }

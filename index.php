@@ -14,9 +14,10 @@
         <div class="container-fluid">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="unos.html">Kreiraj članak</a></li>
+            <li><a href="unos.php?id=0">Kreiraj članak</a></li>
             <li><a href="kategorije.php?kategorija=POLITIKA">Politika</a></li>
             <li><a href="kategorije.php?kategorija=SPORT">Sport</a></li>
+            <li><a href="urediVijest.php">Uredi vijest</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

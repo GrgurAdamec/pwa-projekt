@@ -14,7 +14,7 @@
         <div class="container-fluid">
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.php">Home</a></li>
-            <li><a href="unos.html">Kreiraj članak</a></li>
+            <li><a href="unos.php">Kreiraj članak</a></li>
             <li><a href="kategorije.php?kategorija=POLITIKA">Politika</a></li>
             <li><a href="kategorije.php?kategorija=SPORT">Sport</a></li>
           </ul>
