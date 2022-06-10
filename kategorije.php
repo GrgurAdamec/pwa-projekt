@@ -13,7 +13,7 @@
         <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="index.php">Home</a></li>
             <li><a href="unos.html">Kreiraj članak</a></li>
             <li><a href="kategorije.php?kategorija=POLITIKA">Politika</a></li>
             <li><a href="kategorije.php?kategorija=SPORT">Sport</a></li>
@@ -28,12 +28,13 @@
 
     <content>
     <div class="main">
-        <h1 class="naslov-politika">Politika</h1> <br />
-        <div class="vijesti-politika" id='politika'>
-            <?php
+        <?php
+        $kategorija = $_GET['kategorija'];
+        echo "<h1 class='naslov-politika'>Vijesti</h1> <br />";
+        echo "<div class='vijesti-politika' id='politika'>";
                 include 'connect.php';
 
-                $query = "SELECT * FROM vijest WHERE kategorija = 'sport' AND vidljivost = 1 ORDER BY id DESC LIMIT 4";
+                $query = "SELECT * FROM vijest WHERE kategorija = '$kategorija'";
 
                 $result = mysqli_query($dbc, $query) or die('Error querying database.');
 
@@ -42,34 +43,13 @@
                         echo "<div class='vijesti col-lg-3 col-md-6 col-xs-12'>
                         <img src='". $row['slika'] ."' class='slikeClanak'>
                         <h2>".$row['naslov']."</h2>
-                        <p>". $row['kratki_sadrzaj']."</p>
+                        <p>". $row['kratki_sadrzaj']."s</p>
                         <a href='vijesti.php?id=".$row['id']."' class='linkProcitajVise'>Pročitaj više</a>
                         </div>";
                     }
                 }
-            ?>
-        </div>
-        <h1 class="naslov-sport">Sport</h1> <br />
-        <div class="vijesti-sport" id='sport'>
-            <?php
-                include 'connect.php';
-
-                $query = "SELECT * FROM vijest WHERE kategorija = 'politika' AND vidljivost = 1 ORDER BY id DESC LIMIT 4";
-
-                $result = mysqli_query($dbc, $query) or die('Error querying database.');
-
-                if($result){
-                    while($row = mysqli_fetch_array($result)){
-                        echo "<div class='vijesti col-lg-3 col-md-6 col-xs-12'>
-                        <img src='". $row['slika'] ."' class='slikeClanak'>
-                        <h2>".$row['naslov']."</h2>
-                        <p>". $row['kratki_sadrzaj']."</p>
-                        <a href='vijesti.php?id=".$row['id']."' class='linkProcitajVise'>Pročitaj više</a>
-                        </div>";
-                    }
-                }
-            ?>
-        </div>
+        echo "</div>";
+        ?>
     </div>
     </content>
 
