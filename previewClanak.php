@@ -32,7 +32,7 @@
       $kategorija = $_POST['kategorija'];
       $datum = date("d.m.Y");
 
-      if($_POST['idClanka'] > 0) {
+      if(isset($_POST['staraSlika'])) {
         $slika = $_POST['staraSlika'];
       }
 
@@ -43,7 +43,7 @@
       $vidljivost = 0;
     }
     
-    if($_POST['idClanka'] == 0 || $_FILES['slika'] != NULL){
+    if($_POST['idClanka'] == 0 || !empty($_FILES['slika']['name'])){
         $currentDirectory = getcwd();
         $uploadDirectory = "/Slike/";
 

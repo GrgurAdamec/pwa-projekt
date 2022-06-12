@@ -20,8 +20,8 @@
             <li><a href='urediVijest.php'>Uredi vijest</a></li>
           </ul>
           <ul class='nav navbar-nav navbar-right'>
-            <li><a href='signUp.php'><span class='glyphicon glyphicon-user'></span> Sign Up</a></li>
-            <li><a href='#'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>
+            <li><a href='#'><span class='glyphicon glyphicon-user'></span> Sign Up</a></li>
+            <li><a href='logIn.php'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>
           </ul>
         </div>
       </nav>
@@ -36,20 +36,35 @@
                   <input type='text' id='username' class='form-control' />
                   <label class='form-label' for='username'>Username</label>
                 </div>
+
+                <div class='form-outline mb-4'>
+                  <input type='text' id='ime' class='form-control' />
+                  <label class='form-label' for='ime'>Ime</label>
+                </div>
+
+                <div class='form-outline mb-4'>
+                  <input type='text' id='prezime' class='form-control' />
+                  <label class='form-label' for='prezime'>Prezime</label>
+                </div>
               
                 <!-- Password input -->
                 <div class='form-outline mb-4'>
                   <input type='password' id='password' class='form-control' />
                   <label class='form-label' for='password'>Password</label>
                 </div>
+
+                <div class='form-outline mb-4'>
+                  <input type='password2' id='password2' class='form-control' />
+                  <label class='form-label' for='password2'>Ponovite password</label>
+                </div>
               
                 <!-- Submit button -->
-                <button type='button' class='btn btn-primary btn-block mb-4'>Sign in</button>
+                <button type='button' class='btn btn-primary btn-block mb-4'>Sign up</button>
               
                 <!-- Register buttons -->
                 <div class='text-center'>
                     <br/>
-                    <p>Not a member? <a href='signUp.php'>Register</a></p>
+                    <p>Already a member? <a href='logIn.php'>Log in</a></p>
                 </div>
               </form>";
 

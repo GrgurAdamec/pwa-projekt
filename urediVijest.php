@@ -29,6 +29,18 @@
     <content>
     <div class="main">
         <?php
+        if(isset($_POST['gumbZaBrisanje'])){
+          include 'connect.php';
+
+          $id = $_POST['idClanka'];
+
+          $query="DELETE FROM vijest WHERE id=$id";
+
+          $result = mysqli_query($dbc, $query) or die('Error querying database.');
+
+          mysqli_close($dbc);
+        }
+
         echo "<h1 class='naslov-politika'>Vijesti</h1> <br />";
         echo "<div class='vijesti-politika' id='politika'>";
                 include 'connect.php';

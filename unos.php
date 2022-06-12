@@ -69,7 +69,7 @@
               <div class='form-group col-md-12'>
                 <label for='slika'>Slika</label>
                 <input type='hidden' class='form-control' id='staraSlika' name='staraSlika' value='".$row['slika']."'>
-                <input type='file' name='slika' class='form-control' id='slika' value=''>
+                <input type='file' name='slika' class='form-control' id='slika'>
                 <br><img src='".$row['slika']."' width=100px>
                 <span id='porukaSlika' class='error'></span> </br>
               </div>";
@@ -93,9 +93,14 @@
                   </div>
                 </div>";
               }
-              echo "<button type='submit' class='btn btn-primary col' id='gumb'>Pošalji</button>";
+              echo "<button type='submit' class='btn btn-primary col' id='gumb'>Pošalji</button> <br/>";
 
           echo "</form>
+
+         <form method='post' action='urediVijest.php' enctype='multipart/form-data'>
+            <input type='hidden' class='form-control' id='idClanka' name='idClanka' value='".$row['id']."'>
+            <button type='submit' class='btn btn-primary col' id='gumbZaBrisanje' name='gumbZaBrisanje' style='margin-top:20px;'>Izbriši</button>
+         </form>
       </div>";
       } else {
         echo "<div class='main'>
