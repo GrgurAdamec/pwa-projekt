@@ -25,11 +25,16 @@
     </header>
 
     <?php
+      $id = $_POST['idClanka'];
       $naslov = $_POST['naslov']; 
       $kratkiSadrzaj = $_POST['kratkiSadrzaj'];
       $clanak = $_POST['clanak'];
       $kategorija = $_POST['kategorija'];
       $datum = date("d.m.Y");
+
+      if($_POST['idClanka'] > 0) {
+        $slika = $_POST['staraSlika'];
+      }
 
 
     if(isset($_POST['provjera'])){
@@ -38,55 +43,58 @@
       $vidljivost = 0;
     }
     
-    
-    $currentDirectory = getcwd();
-    $uploadDirectory = "/Slike/";
+    if($_POST['idClanka'] == 0 || $_FILES['slika'] != NULL){
+        $currentDirectory = getcwd();
+        $uploadDirectory = "/Slike/";
 
-    $errors = []; // Store errors here
+        $errors = []; // Store errors here
 
-    $fileExtensionsAllowed = ['jpeg','jpg','png']; // These will be the only file extensions allowed 
+        $fileExtensionsAllowed = ['jpeg','jpg','png']; // These will be the only file extensions allowed 
 
-    $fileName = $_FILES['slika']['name'];
-    $fileSize = $_FILES['slika']['size'];
-    $fileTmpName  = $_FILES['slika']['tmp_name'];
-    $fileType = $_FILES['slika']['type'];
-    //$fileExtension = strtolower(end(explode('.',$fileName)));
+        $fileName = $_FILES['slika']['name'];
+        $fileSize = $_FILES['slika']['size'];
+        $fileTmpName  = $_FILES['slika']['tmp_name'];
+        $fileType = $_FILES['slika']['type'];
+        //$fileExtension = strtolower(end(explode('.',$fileName)));
 
-    $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName); 
+        $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName); 
 
-    // if (! in_array($fileExtension,$fileExtensionsAllowed)) {
-    //   $errors[] = "This file extension is not allowed. Please upload a JPEG or PNG file";
-          // }
+        $slika = 'Slike/' . basename($fileName);
 
-    // if ($fileSize > 4000000) {
-    //   $errors[] = "File exceeds maximum size (4MB)";
-    // }
+        // if (! in_array($fileExtension,$fileExtensionsAllowed)) {
+        //   $errors[] = "This file extension is not allowed. Please upload a JPEG or PNG file";
+              // }
 
-    if (empty($errors)) {
-      $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
+        // if ($fileSize > 4000000) {
+        //   $errors[] = "File exceeds maximum size (4MB)";
+        // }
 
-    // if ($didUpload) {
-    //   echo "The file " . basename($fileName) . " has been uploaded";
-    // } else {
-    //   echo "An error occurred. Please contact the administrator.";
-    //   }
-    // } else {
-    //   foreach ($errors as $error) {
-    //     echo $error . "These are the errors" . "\n";
-    //   }
+        if (empty($errors)) {
+          $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
+
+        // if ($didUpload) {
+        //   echo "The file " . basename($fileName) . " has been uploaded";
+        // } else {
+        //   echo "An error occurred. Please contact the administrator.";
+        //   }
+        // } else {
+        //   foreach ($errors as $error) {
+        //     echo $error . "These are the errors" . "\n";
+        //   }
+        }
     }
 
     echo "<content>
     <div class='main'>
         <form method='post' action='saveClanak.php'>
+          <input type='hidden' name='id' value='$id' />
           <input type='hidden' name='kategorija' value='$kategorija' />
           <input type='hidden' name='naslov' value='$naslov' />
           <input type='hidden' name='kratkiSadrzaj' value='$kratkiSadrzaj' />
           <input type='hidden' name='datum' value='$datum' />
           <input type='hidden' name='clanak' value='$clanak' />
           <input type='hidden' name='vidljivost' value='$vidljivost' />
-          <input type='hidden' name='slika_full_path' value='$uploadPath' />
-          <input type='hidden' name='slika' value='Slike/". basename($fileName) ."' />
+          <input type='hidden' name='slika' value='$slika' />
           <button type='button' onclick='history.back()' class='btn btn-primary col' style='margin-left: 5%; margin-bottom: 10px;'> Povratak </button>
           <button type='submit' name='submit' class='btn btn-primary col' style=' margin-bottom: 10px;'> Spremi </button>
         </form>
@@ -97,7 +105,7 @@
             <br />
             <h6 style='color:grey;'> $datum </h6>
             <br />
-            <img src='Slike/". basename($fileName) ."' class='slikeClanak slika'>
+            <img src='$slika' class='slikeClanak slika'>
             <br/>
             <h4 class='bold-text'> $kratkiSadrzaj </h4>
             <br />

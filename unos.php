@@ -39,8 +39,7 @@
           <form method='post' action='previewClanak.php' enctype='multipart/form-data'>
               <div class='form-row'>
                 <div class='form-group col-md-12'>
-                  <label for='idClanka'>Id clanka</label>
-                  <input type='number' class='form-control' id='idClanka' name='idClanka' value='".$row['id']."' disabled>
+                  <input type='hidden' class='form-control' id='idClanka' name='idClanka' value='".$row['id']."'>
                 </div>
                 <div class='form-group col-md-12'>
                   <label for='naslov'>Naslov članka</label>
@@ -69,7 +68,8 @@
               </div>
               <div class='form-group col-md-12'>
                 <label for='slika'>Slika</label>
-                <input type='file' name='slika' class='form-control' id='slika' accept='image/*' value='".$row['slika']."'>
+                <input type='hidden' class='form-control' id='staraSlika' name='staraSlika' value='".$row['slika']."'>
+                <input type='file' name='slika' class='form-control' id='slika' value=''>
                 <br><img src='".$row['slika']."' width=100px>
                 <span id='porukaSlika' class='error'></span> </br>
               </div>";
@@ -100,7 +100,11 @@
       } else {
         echo "<div class='main'>
         <form method='post' action='previewClanak.php' enctype='multipart/form-data'>
-            <div class='form-row'>
+          	  <div class='form-row'>
+                <div class='form-group col-md-12'>
+                  <input type='hidden' class='form-control' id='idClanka' name='idClanka' value='0'>
+                </div>
+              <div class='form-row'>
               <div class='form-group col-md-12'>
                 <label for='naslov'>Naslov članka</label>
                 <input type='text' class='form-control' id='naslov' placeholder='Naslov...' name='naslov' required>
@@ -178,8 +182,9 @@
           }
       
           var poljeSlika = document.getElementById('slika');
-          var slika = document.getElementById('slika').value;    
-          if (slika.length == 0) {
+          var slika = document.getElementById('slika').value; 
+          var idClanak = document.getElementById('idClanka').value;   
+          if (slika.length == 0 && idClanak == 0) {
               slanje_forme = false;
               poljeSlika.style.border = '1px solid red';
               document.getElementById('porukaSlika').innerHTML = 'Slika mora biti odabrana!';
@@ -187,8 +192,9 @@
           }
 
           var poljeKategorija = document.getElementById('kategorija');
-          var kategorija = document.getElementById('kategorija').value;    
-          if (poljeKategorija.selectedIndex == 0) {
+          var kategorija = document.getElementById('kategorija').value;
+          var idClanak = document.getElementById('idClanka').value;     
+          if (poljeKategorija.selectedIndex == 0 && idClanak == 0) {
               slanje_forme = false;
               poljeKategorija.style.border = '1px solid red';
               document.getElementById('porukaKategorija').innerHTML = 'Kategorija mora biti odabrana!';
