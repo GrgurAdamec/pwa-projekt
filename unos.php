@@ -28,7 +28,7 @@
     <?php
       include 'connect.php';
 
-      if($_GET['id'] != 0){
+      if(isset($_GET['id'])){
       $query = "SELECT * FROM vijest WHERE id = ".$_GET['id']."";
 
       $result = mysqli_query($dbc, $query) or die('Error querying database.');

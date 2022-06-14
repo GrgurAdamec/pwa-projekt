@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +32,10 @@
     <content>
     <div class="main">
         <?php
+        if(isset($_SESSION['username']) && $_SESSION['role'] == 'admin'){
+          echo "Dobrodošli ";
+          echo $_SESSION['username'];
+
         if(isset($_POST['gumbZaBrisanje'])){
           include 'connect.php';
 
@@ -61,6 +68,9 @@
                     }
                 }
         echo "</div>";
+        } else{
+          echo "Dobrodošli, nemate prava za pristup ovoj stranici";
+        }
         ?>
     </div>
     </content>

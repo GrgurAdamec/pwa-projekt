@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +17,7 @@
         <div class="container-fluid">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="unos.php?id=0">Kreiraj članak</a></li>
+            <li><a href="unos.php">Kreiraj članak</a></li>
             <li><a href="kategorije.php?kategorija=POLITIKA">Politika</a></li>
             <li><a href="kategorije.php?kategorija=SPORT">Sport</a></li>
             <li><a href="urediVijest.php">Uredi vijest</a></li>
@@ -22,12 +25,19 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="logIn.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="logOut.php">Log out</a></li>
           </ul>
         </div>
       </nav>
     </header>
 
     <content>
+        <?php
+            if(isset($_SESSION['username'])){
+                echo "Prijavljeni ste kao ";
+                echo $_SESSION['username'];
+            }
+        ?>
     <div class="main">
         <h1 class="naslov-politika">Politika</h1> <br />
         <div class="vijesti-politika" id='politika'>

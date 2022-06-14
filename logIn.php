@@ -1,3 +1,11 @@
+<?php
+session_start();
+// if(isset($_POST['submit']) && isset($_SESSION['role'])){
+//   if($_SESSION['role'] == 'admin'){
+//     header('Location: http://localhost/Vjezbe/Projekt/urediVijest.php');
+//   }
+// }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,21 +38,58 @@
     <content>
     <div class='main'>
             <?php
-                echo "<form style='width:50%; margin:auto;'>
+                if(isset($_POST['submit'])){
+                  include'connect.php';
+      
+                  $korisnickoIme = $_POST['username'];
+                  $lozinka = $_POST['password'];
+      
+                  $query = "SELECT * FROM users";
+                  $result = mysqli_query($dbc, $query) or die('Error querying database.');
+                  $brojac = 0;
+      
+                  if($result) {
+                      while($row = mysqli_fetch_array($result))
+                      {
+                          $kIme = $row['username'];
+                          $hash_lozinka = $row['password'];
+                          // $hash_lozinka = substr($hash_lozinka, 0, 60 );
+      
+      
+                          if($korisnickoIme == $kIme){
+                              if(password_verify($lozinka, $hash_lozinka)){
+                                  $brojac = 1;
+                                  $_SESSION['role'] = $row['autorizacija'];
+                              } 
+                          }
+                      }
+                  }
+      
+                  if($brojac == 1){
+                      echo "Prijava uspješna.";
+                      $_SESSION['username'] = $korisnickoIme;
+                  } else {
+                      echo "Krivi username ili password";
+                  }
+      
+                  mysqli_close($dbc);
+                }
+
+                echo "<form method='post' action='' style='width:50%; margin:auto;'>
                 <!-- Email input -->
                 <div class='form-outline mb-4'>
-                  <input type='text' id='username' class='form-control' />
+                  <input type='text' id='username' name='username' class='form-control' />
                   <label class='form-label' for='username'>Username</label>
                 </div>
               
                 <!-- Password input -->
                 <div class='form-outline mb-4'>
-                  <input type='password' id='password' class='form-control' />
+                  <input type='password' id='password' name='password' class='form-control' />
                   <label class='form-label' for='password'>Password</label>
                 </div>
               
                 <!-- Submit button -->
-                <button type='button' class='btn btn-primary btn-block mb-4'>Sign in</button>
+                <button type='submit' id='submit' name='submit' class='btn btn-primary btn-block mb-4'>Sign in</button>
               
                 <!-- Register buttons -->
                 <div class='text-center'>
