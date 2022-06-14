@@ -91,7 +91,7 @@
             <br />
             <h6 style='color:grey;'> $datum </h6>
             <br />
-            <img src='". $slika ."' class='slikeClanak slika'>
+            <img src='". $slika ."' class='slikeSave'>
             <br/>
             <h4 class='bold-text'> $kratkiSadrzaj </h4>
             <br />

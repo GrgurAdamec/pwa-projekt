@@ -61,7 +61,7 @@
             <br />
             <h6 style='color:grey;'> ".$row['datum']." </h6>
             <br />
-            <img src='".$row['slika']."' class='slikeClanak slika'>
+            <img src='".$row['slika']."' class='slikeVijesti'>
             <br/>
             <h4 class='bold-text'>".$row['kratki_sadrzaj']."</h4>
             <br />

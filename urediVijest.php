@@ -71,13 +71,14 @@
 
                 if($result){
                     while($row = mysqli_fetch_array($result)){
-                        echo "<div class='vijesti col-lg-3 col-md-6 col-xs-12'>
-                        <img src='". $row['slika'] ."' class='slikeClanak'>
-                        <h2>".$row['naslov']."</h2>
-                        <p>". $row['kratki_sadrzaj']."s</p>
-                        <a href='vijesti.php?id=".$row['id']."' class='linkProcitajVise'>Pročitaj više</a>
-                        <a href='unos.php?id=".$row['id']."' class='linkProcitajVise'>Uredi vijest</a>
-                        </div>";
+                      echo "<div class='vijesti2 col-lg-3 col-md-6 col-xs-12'> 
+                        <div class='vijesti'>
+                          <img src='". $row['slika'] ."' class='slikeClanak'>
+                          <h2>".$row['naslov']."</h2>
+                          <p>". $row['kratki_sadrzaj']."</p>
+                          <a href='vijesti.php?id=".$row['id']."' class='linkProcitajVise'>Pročitaj više</a>
+                        </div> 
+                      </div>";
                     }
                 }
         echo "</div>";
