@@ -63,7 +63,6 @@ a:hover{
 } 
 
 .vijesti2{
-    background-color: white;
     margin: auto;
     width: 100%;
     height: 340px;
@@ -118,5 +117,9 @@ article{
 
 .bold-text{
     font-weight: bold;
+}
+
+.word-break{
+    word-break: break-all;
 }
 

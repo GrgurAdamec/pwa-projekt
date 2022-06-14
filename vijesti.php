@@ -65,7 +65,7 @@
             <br/>
             <h4 class='bold-text'>".$row['kratki_sadrzaj']."</h4>
             <br />
-            <p style='word-break:break-all;'>".$row['sadrzaj']."</p>";
+            <p class='word-break'>".$row['sadrzaj']."</p>";
           ?>
         </article>
     </div>

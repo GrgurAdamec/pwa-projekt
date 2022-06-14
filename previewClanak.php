@@ -108,7 +108,7 @@
             <br/>
             <h4 class='bold-text'> $kratkiSadrzaj </h4>
             <br />
-            <p>
+            <p class='word-break'>
                 $clanak
             </p>
         </article>
