@@ -73,15 +73,16 @@ session_start();
                   }
       
                   if($brojac == 1){
-                      echo "Prijava uspješna.";
                       $_SESSION['username'] = $korisnickoIme;
+                      echo "Dobrodošli ";
+                      echo $_SESSION['username'];
                       if($_SESSION['role'] == 'admin'){
                         echo "<script>
                         location.href = 'urediVijest.php';
                         </script>";
                       }
                   } else {
-                      echo "Krivi username ili password";
+                      echo "Krivi username ili password. <br /> Ukoliko niste registrirani registrirajte se na ovom <a href='signUp.php'>linku</a>";
                   }
       
                   mysqli_close($dbc);
