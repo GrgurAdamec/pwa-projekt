@@ -20,25 +20,36 @@
             <li><a href="unos.php">Kreiraj članak</a></li>
             <li><a href="kategorije.php?kategorija=POLITIKA">Politika</a></li>
             <li><a href="kategorije.php?kategorija=SPORT">Sport</a></li>
-            <li><a href="urediVijest.php">Uredi vijest</a></li>
+            <?php
+            if(isset($_SESSION['username']) && $_SESSION['role'] == 'admin'){
+                echo "<li><a href='urediVijest.php'>Uredi vijest</a></li>";
+            }
+            ?>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="logIn.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <li><a href="logOut.php">Log out</a></li>
+            <?php
+            if(!isset($_SESSION['username'])){
+                echo"
+                <li><a href='signUp.php'><span class='glyphicon glyphicon-user'></span> Sign Up</a></li>
+                <li><a href='logIn.php'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
+            }
+            if(isset($_SESSION['username'])){
+                echo "<li><a href='logOut.php'>Log out</a></li>";
+            }
+            ?>
           </ul>
         </div>
       </nav>
     </header>
 
     <content>
+    <div class="main">
         <?php
             if(isset($_SESSION['username'])){
                 echo "Prijavljeni ste kao ";
                 echo $_SESSION['username'];
             }
         ?>
-    <div class="main">
         <h1 class="naslov-politika">Politika</h1> <br />
         <div class="vijesti-politika" id='politika'>
             <?php

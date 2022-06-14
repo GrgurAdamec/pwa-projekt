@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-    <header>
+      <header>
         <h1 class="naslov">L'Grgur Vijesti</h1>
 
         <nav class="navbar navbar-inverse">
@@ -20,14 +20,27 @@
             <li><a href="unos.php">Kreiraj članak</a></li>
             <li><a href="kategorije.php?kategorija=POLITIKA">Politika</a></li>
             <li><a href="kategorije.php?kategorija=SPORT">Sport</a></li>
+            <?php
+            if(isset($_SESSION['username']) && $_SESSION['role'] == 'admin'){
+                echo "<li><a href='#'>Uredi vijest</a></li>";
+            }
+            ?>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <?php
+            if(!isset($_SESSION['username'])){
+                echo"
+                <li><a href='signUp.php'><span class='glyphicon glyphicon-user'></span> Sign Up</a></li>
+                <li><a href='logIn.php'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
+            }
+            if(isset($_SESSION['username'])){
+                echo "<li><a href='logOut.php'>Log out</a></li>";
+            }
+            ?>
           </ul>
         </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
 
     <content>
     <div class="main">
