@@ -53,6 +53,8 @@
                           <h2>".$row['naslov']."</h2>
                           <p>". $row['kratki_sadrzaj']."</p>
                           <a href='vijesti.php?id=".$row['id']."' class='linkProcitajVise'>Pročitaj više</a>
+                          <br />
+                          <a href='unos.php?id=".$row['id']."' class='linkProcitajVise'>Uredi članak</a>
                         </div> 
                       </div>";
                     }
