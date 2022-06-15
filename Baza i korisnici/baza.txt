@@ -1,0 +1,111 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 15, 2022 at 03:46 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `projekt`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `ime` varchar(50) NOT NULL,
+  `prezime` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `autorizacija` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `ime`, `prezime`, `username`, `password`, `autorizacija`) VALUES
+(1, 'grgur', 'adamec', 'grgur', '$2y$10$wNF6HwRCmBh7CAIKClkZuevAEZoCPLrKbsCDe/c/75IDrFWBVMw7G', 'admin'),
+(2, 'papak', 'papak', 'papak', '$2y$10$w.ZjOr1cGV3Jyzp2LztnO.tTp7Y82i7Xud93Y8RWnJM87zkbD3S6q', ''),
+(4, 'marko', 'marko', 'marko', '$2y$10$FUg.D03p/KT/h7WY7D.g3u2CM26FEGgobhfXWbUkl2HBuWepdRoK2', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vijest`
+--
+
+CREATE TABLE `vijest` (
+  `id` int(11) NOT NULL,
+  `naslov` varchar(255) NOT NULL,
+  `kategorija` varchar(255) NOT NULL,
+  `kratki_sadrzaj` varchar(255) NOT NULL,
+  `sadrzaj` longtext NOT NULL,
+  `slika` varchar(255) NOT NULL,
+  `datum` varchar(255) NOT NULL,
+  `vidljivost` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `vijest`
+--
+
+INSERT INTO `vijest` (`id`, `naslov`, `kategorija`, `kratki_sadrzaj`, `sadrzaj`, `slika`, `datum`, `vidljivost`) VALUES
+(1, 'Moj prvi članak', 'SPORT', 'Ne znam al bit će dobar', 'Haha marko je kupio bombone aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'Slike/Jan_Vilímek_-_Karel_IV.jpg', '0000-00-00', 1),
+(9, 'Moj drugi članak', 'POLITIKA', 'Ovaj ima dobar datum', 'Bla bla truč truč konj ide i jede travu\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra volutpat neque, ac pellentesque enim congue sed. Fusce sollicitudin, mauris viverra ornare efficitur, metus lacus egestas magna, nec dignissim diam orci vel diam. Aliquam fermentum risus ut ante commodo, vel bibendum lorem maximus. Duis tincidunt ex in varius blandit. Proin lectus dolor, porta in diam at, vulputate eleifend nisl. Nulla facilisi. Nullam non purus ex. Duis sed felis vitae magna venenatis luctus sed dignissim nunc. Quisque fringilla quis mi quis interdum. Nulla dictum risus sit amet urna consequat, sit amet semper purus sollicitudin. Maecenas sit amet enim non leo auctor commodo quis lacinia leo.\r\n\r\nProin et porttitor neque. Ut urna nisi, vestibulum ac nisl quis, ornare pretium quam. Donec at odio viverra erat dignissim hendrerit a eu erat. Proin luctus faucibus tellus sit amet dictum. Aenean tincidunt feugiat efficitur. Ut at justo posuere, porttitor sapien elementum, laoreet felis. Praesent dignissim pretium lectus non pulvinar. Aenean fermentum at erat nec luctus. Sed aliquam placerat volutpat. Quisque commodo mauris in cursus sagittis.', 'Slike/lastovo-panorama-01.jpg', '04.06.2022', 1),
+(10, 'Marin Čilić izjavio nevjerojatnu izjavu', 'SPORT', 'Pogledajte Marinovu izjavu nakon gubitka od Britanskog reprezentativca Johna Bohemianrapsodyja', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra volutpat neque, ac pellentesque enim congue sed. Fusce sollicitudin, mauris viverra ornare efficitur, metus lacus egestas magna, nec dignissim diam orci vel diam. Aliquam fermentum risus ut ante commodo, vel bibendum lorem maximus. Duis tincidunt ex in varius blandit. Proin lectus dolor, porta in diam at, vulputate eleifend nisl. Nulla facilisi. Nullam non purus ex. Duis sed felis vitae magna venenatis luctus sed dignissim nunc. Quisque fringilla quis mi quis interdum. Nulla dictum risus sit amet urna consequat, sit amet semper purus sollicitudin. Maecenas sit amet enim non leo auctor commodo quis lacinia leo.\r\n\r\nProin et porttitor neque. Ut urna nisi, vestibulum ac nisl quis, ornare pretium quam. Donec at odio viverra erat dignissim hendrerit a eu erat. Proin luctus faucibus tellus sit amet dictum. Aenean tincidunt feugiat efficitur. Ut at justo posuere, porttitor sapien elementum, laoreet felis. Praesent dignissim pretium lectus non pulvinar. Aenean fermentum at erat nec luctus. Sed aliquam placerat volutpat. Quisque commodo mauris in cursus sagittis. \r\nMarin je izjavio da je John obični britanski konj koji ima zube ko morski pas al ne u dobrom smislu.', 'Slike/62315954-marin-cilic.jpg', '04.06.2022', 1),
+(11, 'Boris Johnsson pojeo OVO na snimci', 'POLITIKA', 'Pogledajte sramotni trenutak Engleskog premijera ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra volutpat neque, ac pellentesque enim congue sed. Fusce sollicitudin, mauris viverra ornare efficitur, metus lacus egestas magna, nec dignissim diam orci vel diam. Aliquam fermentum risus ut ante commodo, vel bibendum lorem maximus. Duis tincidunt ex in varius blandit. Proin lectus dolor, porta in diam at, vulputate eleifend nisl. Nulla facilisi. Nullam non purus ex. Duis sed felis vitae magna venenatis luctus sed dignissim nunc. Quisque fringilla quis mi quis interdum. Nulla dictum risus sit amet urna consequat, sit amet semper purus sollicitudin. Maecenas sit amet enim non leo auctor commodo quis lacinia leo.\r\n\r\nProin et porttitor neque. Ut urna nisi, vestibulum ac nisl quis, ornare pretium quam. Donec at odio viverra erat dignissim hendrerit a eu erat. Proin luctus faucibus tellus sit amet dictum. Aenean tincidunt feugiat efficitur. Ut at justo posuere, porttitor sapien elementum, laoreet felis. Praesent dignissim pretium lectus non pulvinar. Aenean fermentum at erat nec luctus. Sed aliquam placerat volutpat. Quisque commodo mauris in cursus sagittis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra volutpat neque, ac pellentesque enim congue sed. Fusce sollicitudin, mauris viverra ornare efficitur, metus lacus egestas magna, nec dignissim diam orci vel diam. Aliquam fermentum risus ut ante commodo, vel bibendum lorem maximus. Duis tincidunt ex in varius blandit. Proin lectus dolor, porta in diam at, vulputate eleifend nisl. Nulla facilisi. Nullam non purus ex. Duis sed felis vitae magna venenatis luctus sed dignissim nunc. Quisque fringilla quis mi quis interdum. Nulla dictum risus sit amet urna consequat, sit amet semper purus sollicitudin. Maecenas sit amet enim non leo auctor commodo quis lacinia leo.\r\n\r\nProin et porttitor neque. Ut urna nisi, vestibulum ac nisl quis, ornare pretium quam. Donec at odio viverra erat dignissim hendrerit a eu erat. Proin luctus faucibus tellus sit amet dictum. Aenean tincidunt feugiat efficitur. Ut at justo posuere, porttitor sapien elementum, laoreet felis. Praesent dignissim pretium lectus non pulvinar. Aenean fermentum at erat nec luctus. Sed aliquam placerat volutpat. Quisque commodo mauris in cursus sagittis.', 'Slike/a6ydVkjZBUZ8dYm-.jfif', '04.06.2022', 1),
+(12, 'John Cener osvoji WWP natjecanje', 'SPORT', 'Neki lažu, a neki ne', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra volutpat neque, ac pellentesque enim congue sed. Fusce sollicitudin, mauris viverra ornare efficitur, metus lacus egestas magna, nec dignissim diam orci vel diam. Aliquam fermentum risus ut ante commodo, vel bibendum lorem maximus. Duis tincidunt ex in varius blandit. Proin lectus dolor, porta in diam at, vulputate eleifend nisl. Nulla facilisi. Nullam non purus ex. Duis sed felis vitae magna venenatis luctus sed dignissim nunc. Quisque fringilla quis mi quis interdum. Nulla dictum risus sit amet urna consequat, sit amet semper purus sollicitudin. Maecenas sit amet enim non leo auctor commodo quis lacinia leo.\r\n\r\nProin et porttitor neque. Ut urna nisi, vestibulum ac nisl quis, ornare pretium quam. Donec at odio viverra erat dignissim hendrerit a eu erat. Proin luctus faucibus tellus sit amet dictum. Aenean tincidunt feugiat efficitur. Ut at justo posuere, porttitor sapien elementum, laoreet felis. Praesent dignissim pretium lectus non pulvinar. Aenean fermentum at erat nec luctus. Sed aliquam placerat volutpat. Quisque commodo mauris in cursus sagittis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra volutpat neque, ac pellentesque enim congue sed. Fusce sollicitudin, mauris viverra ornare efficitur, metus lacus egestas magna, nec dignissim diam orci vel diam. Aliquam fermentum risus ut ante commodo, vel bibendum lorem maximus. Duis tincidunt ex in varius blandit. Proin lectus dolor, porta in diam at, vulputate eleifend nisl. Nulla facilisi. Nullam non purus ex. Duis sed felis vitae magna venenatis luctus sed dignissim nunc. Quisque fringilla quis mi quis interdum. Nulla dictum risus sit amet urna consequat, sit amet semper purus sollicitudin. Maecenas sit amet enim non leo auctor commodo quis lacinia leo.\r\n\r\nProin et porttitor neque. Ut urna nisi, vestibulum ac nisl quis, ornare pretium quam. Donec at odio viverra erat dignissim hendrerit a eu erat. Proin luctus faucibus tellus sit amet dictum. Aenean tincidunt feugiat efficitur. Ut at justo posuere, porttitor sapien elementum, laoreet felis. Praesent dignissim pretium lectus non pulvinar. Aenean fermentum at erat nec luctus. Sed aliquam placerat volutpat. Quisque commodo mauris in cursus sagittis.', 'Slike/62315954-marin-cilic.jpg', '04.06.2022', 1),
+(13, 'Papa Franjo bacio smeće kroz prozor', 'POLITIKA', 'Pogledajte što Papa radi kada misli da ga se ne gleda', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tortor augue, condimentum nec pellentesque vitae, rhoncus sit amet quam. In ac pulvinar lectus, id viverra purus. Nulla rhoncus posuere pulvinar. In venenatis nulla vitae nibh mattis, aliquet pulvinar lorem dapibus. Proin at mi porta, rutrum risus at, finibus mauris. Aenean aliquet arcu lorem, id sagittis lacus lacinia a. Sed et rhoncus orci. Integer interdum leo sed purus ornare, ut gravida neque euismod.\r\n\r\nDuis lacus orci, facilisis pharetra turpis eu, lobortis rhoncus orci. Morbi rhoncus mollis magna quis tempus. Pellentesque mollis vehicula lectus, nec rhoncus purus feugiat sit amet. Praesent a ultricies turpis, et luctus lectus. Cras eleifend quis tellus ut imperdiet. Sed egestas quam id lacinia dapibus. Maecenas feugiat orci dui. In quis ligula at lacus finibus consequat. Mauris tristique metus non odio mattis, eget tincidunt sem viverra. Maecenas dignissim ultrices aliquet. Nulla bibendum lorem metus, at finibus tortor viverra nec. Pellentesque quis malesuada odio. Vivamus arcu dolor, fringilla ut aliquam eget, congue vitae diam. Curabitur eros nulla, tempus eu feugiat eget, iaculis in dolor.\r\n\r\nInteger in faucibus orci. Aliquam ipsum odio, posuere ut interdum a, consequat ut sem. Integer elementum fermentum pulvinar. Nulla fermentum, tellus nec ultrices mattis, odio mi ornare sapien, sed lacinia urna urna quis urna. Curabitur id nisl vitae elit lacinia pellentesque a et nunc. Pellentesque non neque enim. Maecenas congue volutpat pharetra. In congue sodales porta. Vestibulum ornare tristique magna vel hendrerit. Nullam sollicitudin cursus vestibulum. Nulla tincidunt tortor ut porta aliquet. Etiam vestibulum libero eu velit convallis convallis. Sed mollis dolor nisl, nec dapibus sapien tincidunt vel. Phasellus sollicitudin magna vel libero posuere, quis ullamcorper eros aliquam. Maecenas laoreet libero ut neque egestas finibus. Aliquam feugiat ligula purus, non tincidunt ipsum rhoncus vitae.', 'Slike/Jan_Vilímek_-_Karel_IV.jpg', '04.06.2022', 1),
+(15, 'Papak', 'POLITIKA', 'PApakoicjoijca', 'papakijciojsosc', 'Slike/IMG_4134.PNG', '14.06.2022', 0),
+(16, 'oidjcoisjc', 'SPORT', 'oixocoaxcoocn', 'ococnouanoajc', 'Slike/62315954-marin-cilic.jpg', '10.06.2022', 0),
+(17, 'oijcoijsoixjcois', 'SPORT', 'oijcxoijcoiajoij', 'ohcxoijcoiq', 'Slike/IMG_4134.PNG', '10.06.2022', 0),
+(20, 'Ja sam vlak neki', 'POLITIKA', 'test test', 'jxbjkbabxakjbcakj', 'Slike/smrle.jpg', '12.06.2022', 0),
+(24, 'iushuiahdoioh', 'SPORT', 'ohouhasodshoi', 'ohsohdiuashdoasd', 'Slike/c2671960-0698-4546-9b9f-1ee59fd5caf5-twogirlsdrivingroadtrip.jpg', '14.06.2022', 1),
+(25, 'amosaodmaosnd', 'POLITIKA', 'ndsonoisdfnojsdfoij', 'oindsosnfoisdnfoisdffdosi', 'Slike/slika_na_platno_8732_6901.jpg', '14.06.2022', 1),
+(26, 'Borat nesto radi', 'POLITIKA', 'fdsfsdfpinlkjsnfjlksdanf', 'fdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanffdsfsdfpinlkjsnfjlksdanf', 'Slike/borat.jpg', '14.06.2022', 1),
+(27, 'OIJdosiasofhsao', 'SPORT', 'joishaoiahfoihafo', 'ohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsddfsohdaoihfdouahfiulsdd', 'Slike/borat.jpg', '14.06.2022', 0),
+(28, 'asdasddsadsa', 'SPORT', 'asddasdsadasdasdas', 'asddsasaddsadsadsadasasdasdasddsasaddsadsadsadasasdasdasddsasaddsadsadsadasasdasdasddsasaddsadsadsadasasdasdasddsasaddsadsadsadasasdasdasddsasaddsadsadsadasasdasdasddsasaddsadsadsadasasdasdasddsasaddsadsadsadasasdasdasddsasaddsadsadsadasasdasdasddsasaddsadsadsadasasdasdasddsasaddsadsadsadasasdasdasddsasaddsadsadsadasasdasd', 'Slike/01-birth-month-If-You-Were-Born-In-Summer-This-Is-What-We-Know-About-You_644740429-icemanphotos.jpg', '14.06.2022', 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `vijest`
+--
+ALTER TABLE `vijest`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `vijest`
+--
+ALTER TABLE `vijest`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+COMMIT;
