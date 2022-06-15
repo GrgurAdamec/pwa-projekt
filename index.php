@@ -27,7 +27,7 @@
             <?php
                 include 'connect.php';
 
-                $query = "SELECT * FROM vijest WHERE kategorija = 'sport' AND vidljivost = 1 ORDER BY id DESC LIMIT 4";
+                $query = "SELECT * FROM vijest WHERE kategorija = 'politika' AND vidljivost = 1 ORDER BY id DESC LIMIT 4";
 
                 $result = mysqli_query($dbc, $query) or die('Error querying database.');
 
@@ -50,7 +50,7 @@
             <?php
                 include 'connect.php';
 
-                $query = "SELECT * FROM vijest WHERE kategorija = 'politika' AND vidljivost = 1 ORDER BY id DESC LIMIT 4";
+                $query = "SELECT * FROM vijest WHERE kategorija = 'sport' AND vidljivost = 1 ORDER BY id DESC LIMIT 4";
 
                 $result = mysqli_query($dbc, $query) or die('Error querying database.');
 
