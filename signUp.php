@@ -2,7 +2,7 @@
  session_start();
  
 if(isset($_SESSION['username'])) {
-  header('Location: http://localhost/Vjezbe/Projekt/index.php');
+  header('Location: index.php');
 }
 ?>
 <!DOCTYPE html>
