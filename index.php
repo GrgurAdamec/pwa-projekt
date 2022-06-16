@@ -16,12 +16,6 @@
     
     <content>
     <div class="main">
-        <?php
-            if(isset($_SESSION['username'])){
-                echo "Prijavljeni ste kao ";
-                echo $_SESSION['username'];
-            }
-        ?>
         <h1 class="naslov-politika">Politika</h1> <br />
         <div class="vijesti-politika" id='politika'>
             <?php

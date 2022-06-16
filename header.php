@@ -1,6 +1,11 @@
 <header>
         <h1 class="naslov">L'Grgur Vijesti</h1>
-
+        <?php
+            if(isset($_SESSION['username'])){
+                echo "Prijavljeni ste kao ";
+                echo $_SESSION['username'];
+            }
+        ?>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">

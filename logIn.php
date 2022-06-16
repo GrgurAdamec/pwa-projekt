@@ -60,7 +60,7 @@ if(isset($_SESSION['username'])) {
                         </script>";
                       }
                   } else {
-                      echo "Krivi username ili password. <br /> Ukoliko niste registrirani registrirajte se na ovom <a href='signUp.php'>linku</a>";
+                      echo "<p class='footer'>Krivi username ili password.</p> <br />  <p class='footer'>Ukoliko niste registrirani registrirajte se na ovom <a href='signUp.php'>linku</a><p>";
                   }
       
                   mysqli_close($dbc);

@@ -60,9 +60,9 @@ if(isset($_SESSION['username'])) {
                         mysqli_stmt_bind_param($stmt,'ssss', $ime, $prezime, $korisnickoIme, $hashed_password);
                         mysqli_stmt_execute($stmt);
                     } 
-                    echo "Registracija je uspješna";
+                    echo "<p class='footer'>Registracija uspješna!</p> <br />  <p class='footer'>Prijavite se na ovom <a href='logIn.php'>linku</a><p>";;
                   } else {
-                      echo "Korinik već postoji.";
+                      echo "<p class='footer'>Korinik već postoji.</p>";
                   }    
                 }
 
