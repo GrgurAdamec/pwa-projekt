@@ -43,6 +43,8 @@ if(isset($_SESSION['username'])) {
                               if(password_verify($lozinka, $hash_lozinka)){
                                   $brojac = 1;
                                   $_SESSION['role'] = $row['autorizacija'];
+                                  $_SESSION['ime'] = $row['ime'];
+                                  $_SESSION['prezime'] = $row['prezime'];
                               } 
                           }
                       }

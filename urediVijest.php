@@ -23,7 +23,7 @@
         <?php
         if(isset($_SESSION['username']) && $_SESSION['role'] == 'admin' && isset($_GET['id'])){
             echo "Dobrodošli ";
-            echo $_SESSION['username'];
+            echo "".$_SESSION['ime']." ".$_SESSION['prezime']."";
 
           if(isset($_POST['gumbZaBrisanje'])){
             include 'connect.php';
