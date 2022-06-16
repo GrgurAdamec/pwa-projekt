@@ -1,2 +1,2 @@
-Admin: grgur - grgur
-Obicni: marko - marko
+Admin: admin - admin
+Obicni: user - user
