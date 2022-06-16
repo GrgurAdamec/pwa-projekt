@@ -24,18 +24,16 @@
         if(isset($_SESSION['username']) && $_SESSION['role'] == 'admin' && isset($_GET['id'])){
             echo "Dobrodošli ";
             echo "".$_SESSION['ime']." ".$_SESSION['prezime']."";
+        }
+        if(isset($_POST['gumbZaBrisanje'])){
+          include 'connect.php';
 
-          if(isset($_POST['gumbZaBrisanje'])){
-            include 'connect.php';
+          $id = $_POST['idClanka'];
 
-            $id = $_POST['idClanka'];
+          $query="DELETE FROM vijest WHERE id=$id";
 
-            $query="DELETE FROM vijest WHERE id=$id";
-
-            $result = mysqli_query($dbc, $query) or die('Error querying database.');
-
-            mysqli_close($dbc);
-          }
+          $result = mysqli_query($dbc, $query) or die('Error querying database.');
+          mysqli_close($dbc);
         }
         ?>
         <h1 class='naslov-politika'>Politika</h1> <br />
