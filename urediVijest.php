@@ -21,49 +21,71 @@
     <content>
     <div class="main">
         <?php
-        if(isset($_SESSION['username']) && $_SESSION['role'] == 'admin'){
-          echo "Dobrodošli ";
-          echo $_SESSION['username'];
+        if(isset($_SESSION['username']) && $_SESSION['role'] == 'admin' && isset($_GET['id'])){
+            echo "Dobrodošli ";
+            echo $_SESSION['username'];
 
-        if(isset($_POST['gumbZaBrisanje'])){
-          include 'connect.php';
+          if(isset($_POST['gumbZaBrisanje'])){
+            include 'connect.php';
 
-          $id = $_POST['idClanka'];
+            $id = $_POST['idClanka'];
 
-          $query="DELETE FROM vijest WHERE id=$id";
+            $query="DELETE FROM vijest WHERE id=$id";
 
-          $result = mysqli_query($dbc, $query) or die('Error querying database.');
+            $result = mysqli_query($dbc, $query) or die('Error querying database.');
 
-          mysqli_close($dbc);
+            mysqli_close($dbc);
+          }
         }
-
-        echo "<h1 class='naslov-politika'>Vijesti</h1> <br />";
-        echo "<div class='vijesti-politika' id='politika'>";
+        ?>
+        <h1 class='naslov-politika'>Politika</h1> <br />
+        <div class="vijesti-politika" id='politika'>
+            <?php
                 include 'connect.php';
 
-                $query = "SELECT * FROM vijest";
+                $query = "SELECT * FROM vijest WHERE kategorija = 'politika' ORDER BY id DESC";
 
                 $result = mysqli_query($dbc, $query) or die('Error querying database.');
 
                 if($result){
                     while($row = mysqli_fetch_array($result)){
-                      echo "<div class='vijesti2 col-lg-3 col-md-6 col-xs-12'> 
-                        <div class='vijesti'>
-                          <img src='". $row['slika'] ."' class='slikeClanak'>
-                          <h2>".$row['naslov']."</h2>
-                          <p>". $row['kratki_sadrzaj']."</p>
-                          <a href='vijesti.php?id=".$row['id']."' class='linkProcitajVise'>Pročitaj više</a>
-                          <br />
-                          <a href='unos.php?id=".$row['id']."' class='linkProcitajVise'>Uredi članak</a>
-                        </div> 
-                      </div>";
+                        echo "<div class='vijesti2 col-lg-3 col-md-6 col-xs-12'> 
+                            <div class='vijesti'>
+                                <img src='". $row['slika'] ."' class='slikeClanak'>
+                                <h2>".$row['naslov']."</h2>
+                                <p>". $row['kratki_sadrzaj']."</p>
+                                <a href='vijesti.php?id=".$row['id']."' class='linkProcitajVise'>Pročitaj više</a> <br />
+                                <a href='unos.php?id=".$row['id']."' class='linkProcitajVise'>Uredi članak</a>
+                            </div> 
+                        </div>";
                     }
                 }
-        echo "</div>";
-        } else{
-          echo "Dobrodošli, nemate prava za pristup ovoj stranici";
-        }
-        ?>
+            ?>
+        </div>
+        <h1 class="naslov-sport">Sport</h1> <br />
+        <div class="vijesti-sport" id='sport'>
+            <?php
+                // include 'connect.php';
+
+                $query = "SELECT * FROM vijest WHERE kategorija = 'sport' ORDER BY id DESC";
+
+                $result = mysqli_query($dbc, $query) or die('Error querying database.');
+
+                if($result){
+                    while($row = mysqli_fetch_array($result)){
+                        echo "<div class='vijesti2 col-lg-3 col-md-6 col-xs-12'> 
+                          <div class='vijesti'>
+                            <img src='". $row['slika'] ."' class='slikeClanak'>
+                            <h2>".$row['naslov']."</h2>
+                            <p>". $row['kratki_sadrzaj']."</p>
+                            <a href='vijesti.php?id=".$row['id']."' class='linkProcitajVise'>Pročitaj više</a> <br />
+                            <a href='unos.php?id=".$row['id']."' class='linkProcitajVise'>Uredi članak</a>
+                          </div> 
+                        </div>";
+                    }
+                }
+            ?>
+        </div>
     </div>
     </content>
 

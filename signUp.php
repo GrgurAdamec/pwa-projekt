@@ -88,7 +88,7 @@ if(isset($_SESSION['username'])) {
                   <input type='password' id='password' class='form-control' name='password' />
                 </div>
 
-                <div class='form-outline mb-4'>
+                <div class='form-outline mb-4' style='margin-bottom:20px;'>
                   <label class='form-label' for='password2'>Ponovite password</label>
                   <input type='password' id='password2' class='form-control' name='password2'  stlye='margin-bottom:20px;'  />
                 </div>

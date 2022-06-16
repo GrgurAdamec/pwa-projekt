@@ -50,11 +50,13 @@ if(isset($_SESSION['username'])) {
       
                   if($brojac == 1){
                       $_SESSION['username'] = $korisnickoIme;
-                      echo "Dobrodošli ";
-                      echo $_SESSION['username'];
                       if($_SESSION['role'] == 'admin'){
                         echo "<script>
-                        location.href = 'urediVijest.php';
+                        location.href = 'urediVijest.php?id=admin';
+                        </script>";
+                      } else {
+                        echo "<script>
+                        location.href = 'index.php';
                         </script>";
                       }
                   } else {

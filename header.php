@@ -5,10 +5,12 @@
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="index.php">Home</a></li>
-                    <li><a href="unos.php">Kreiraj članak</a></li>
                     <li><a href="kategorije.php?kategorija=POLITIKA">Politika</a></li>
                     <li><a href="kategorije.php?kategorija=SPORT">Sport</a></li>
                     <?php
+                    if(isset($_SESSION['username'])){
+                        echo"<li><a href='unos.php'>Kreiraj članak</a></li>";
+                    }
                     if(isset($_SESSION['username']) && $_SESSION['role'] == 'admin'){
                         echo "<li><a href='urediVijest.php'>Uredi vijest</a></li>";
                     }

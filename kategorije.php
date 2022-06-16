@@ -18,11 +18,11 @@
     <div class="main">
         <?php
         $kategorija = $_GET['kategorija'];
-        echo "<h1 class='naslov-politika'>Vijesti</h1> <br />";
+        echo "<h1 class='naslov-politika'>VIJESTI $kategorija</h1> <br />";
         echo "<div class='vijesti-politika' id='politika'>";
                 include 'connect.php';
 
-                $query = "SELECT * FROM vijest WHERE kategorija = '$kategorija'";
+                $query = "SELECT * FROM vijest WHERE kategorija = '$kategorija' ORDER BY id DESC";
 
                 $result = mysqli_query($dbc, $query) or die('Error querying database.');
 
