@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2022 at 11:03 AM
+-- Generation Time: Jun 16, 2022 at 11:55 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -36,9 +36,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `ime`, `prezime`, `username`, `password`, `autorizacija`) VALUES
 (1, 'grgur', 'adamec', 'grgur', '$2y$10$wNF6HwRCmBh7CAIKClkZuevAEZoCPLrKbsCDe/c/75IDrFWBVMw7G', 'admin'),
-(2, 'papak', 'papak', 'papak', '$2y$10$w.ZjOr1cGV3Jyzp2LztnO.tTp7Y82i7Xud93Y8RWnJM87zkbD3S6q', ''),
 (4, 'marko', 'marko', 'marko', '$2y$10$FUg.D03p/KT/h7WY7D.g3u2CM26FEGgobhfXWbUkl2HBuWepdRoK2', ''),
-(5, 'ljiljana', 'ljiljana', 'ljiljana', '$2y$10$U5uxVoNF9o91zMbsKnEHBuqBHOaHLj0lvLgCMV6nbsWLCaRPocaz2', '');
+(5, 'ljiljana', 'ljiljana', 'ljiljana', '$2y$10$U5uxVoNF9o91zMbsKnEHBuqBHOaHLj0lvLgCMV6nbsWLCaRPocaz2', ''),
+(6, 'admin', 'admin', 'admin', '$2y$10$3I2QYFxSZ1oeJB/1LpyeKuFSDAn4LO.LovT69EIOxm0/AiOeRuoFW', 'admin'),
+(7, 'user', 'user', 'user', '$2y$10$//0DZKrlmgwPBR3zOeW.l.c.LkEyox1zsQbBVkE3HS.e1JBSBmXL.', '');
 
 -- --------------------------------------------------------
 
@@ -100,7 +101,7 @@ ALTER TABLE `vijest`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `vijest`
