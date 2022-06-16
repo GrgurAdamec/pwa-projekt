@@ -133,22 +133,22 @@ if(isset($_SESSION['username'])) {
 
             messages: {
               ime: {
-                required: "<br/> Ime ne smije biti prazno",
+                required: "Ime ne smije biti prazno",
               },
               prezime: {
-                required: "<br/> Prezime ne smije biti prazno",
+                required: "Prezime ne smije biti prazno",
               },
               username: {
-                required: "<br/> Username ne smije biti prazan",
-                minlength: "<br/> Username mora imati barem 4 znaka",
-                maxlength: "<br/> Username može imati najviše 15 znakova"
+                required: "Username ne smije biti prazan",
+                minlength: "Username mora imati barem 4 znaka",
+                maxlength: "Username može imati najviše 15 znakova"
               },
               password: {
-                required: "<br/> Password ne smije biti prazan",
+                required: "Password ne smije biti prazan",
               },
               password2: {
-                required: "<br/> Password ne smije biti prazan",
-                equalTo: "<br/> Obje lozinke moraju biti iste",
+                required: "Password ne smije biti prazan",
+                equalTo: "Obje lozinke moraju biti iste",
               },
           },
       
